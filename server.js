@@ -1,12 +1,15 @@
-import express from 'express'; 
+import express from "express";
+import dotenv from 'dotenv/config';
 const app = express();
-const PORT = process.env.PORT || 3000;
-const date = new Date();
-const onMessage = () => {
-console.log(`If you're seeing this message first of all fuck you and second of all it's ${date}`);
-};
-onMessage();
+const port = process.env.PORT || 3000;
 
-app.listen (PORT , () => {
-    console.log(`Hello , the server is running on port ${PORT}`);
-})
+app.use(express.json({
+    verify: (req , res , buf) => {
+        req.rawBody = buf;
+    }
+}));
+
+
+app.listen(port , () => {
+    console.log("The server is running on port:" , port);
+});
