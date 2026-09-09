@@ -1,6 +1,8 @@
 import crypto, { timingSafeEqual } from "crypto";
+import config from "../config/env.js";
+const appSecret = config.appSecret;
 //Turn req.body into a raw buffer and compare it to the signature
-function validateHmac(req, appSecret) {
+function validateHmac(req) {
     const signature = req.headers["x-hub-signature-256"];
     if (!signature || !req.rawBody) {
         return false;

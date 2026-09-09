@@ -1,5 +1,5 @@
 import crypto, { timingSafeEqual } from "node:crypto";
-import argon2 from "argon2";
+import * as argon2 from "argon2";
 
 // hashing password
 
@@ -31,11 +31,6 @@ async function verifyHash(rawPassword: string , hash: string): Promise<boolean> 
 
 //generating random tokens
 
-function generateToken(bytesLength:number = 32):string {
-
-    return crypto.randomBytes(bytesLength).toString("hex");
-
-};
 
 
 function hashToken(rawToken: string):string {
@@ -75,7 +70,6 @@ export {
 
     hashPassword ,
     verifyHash,
-    generateToken,
     verifyToken,
     hashToken
 

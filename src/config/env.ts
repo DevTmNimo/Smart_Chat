@@ -24,7 +24,7 @@ const config: Config = {
     accessToken : required("ACCESS_TOKEN"),
     supabaseUrl : required("SUPABASE_DATA_API_ENDPOINT"),
     supabaseKey : required("SUPABASE_SECRET_API_KEY"),
-    encryptionKey : required("ENCRYPTION/KEY"),
+    encryptionKey : required("ENCRYPTION_KEY"),
     
 };
 export default config;

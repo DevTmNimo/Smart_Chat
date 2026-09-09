@@ -1,7 +1,6 @@
 import validateHmac from "./authenticate.hmac.js";
-import config from "../config/env.js";
 function validHmac(req, res, next) {
-    const isValid = validateHmac(req, config.appSecret);
+    const isValid = validateHmac(req);
     if (!isValid) {
         res.status(401).json({
             "error": "Invalid HMAC signature"

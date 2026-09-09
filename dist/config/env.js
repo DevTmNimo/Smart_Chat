@@ -7,12 +7,12 @@ function required(key) {
     }
     return value;
 }
-;
 const config = {
     port: Number(required("PORT")),
     appSecret: required("INSTAGRAM_APP_SECRET"),
     accessToken: required("ACCESS_TOKEN"),
     supabaseUrl: required("SUPABASE_DATA_API_ENDPOINT"),
     supabaseKey: required("SUPABASE_SECRET_API_KEY"),
+    encryptionKey: required("ENCRYPTION_KEY"),
 };
 export default config;

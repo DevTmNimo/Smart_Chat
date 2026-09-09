@@ -9,7 +9,7 @@ const authTagLength = 16;
 
 function validateEncryptionInput(key: Buffer, iv: Buffer): boolean {
   return key.length === keyLength && iv.length === ivLength;
-}
+};
 
 function encrypt(plaintext: string): string {
   const iv = crypto.randomBytes(ivLength);

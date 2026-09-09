@@ -1,11 +1,10 @@
-import express, {Request , Response , NextFunction} from "express";
+import {Request , Response , NextFunction} from "express";
 import validateHmac from "./authenticate.hmac.js";
-import config from "../config/env.js";
 
 
 function validHmac(req: Request, res: Response, next: NextFunction ): void {
 
-    const isValid: boolean = validateHmac(req , config.appSecret);
+    const isValid: boolean = validateHmac(req);
 
     if(!isValid) {
 
